@@ -5,6 +5,17 @@ services:
     container_name: khwhahn/cardano-sl
     volumes:
       - cardano:/cardano-sl
+    deploy:
+        replicas: 1
+        restart_policy:
+          condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - cardanonet
 volumes:
   cardano:
     driver: local
+
+networks:
+  cardanonet:
