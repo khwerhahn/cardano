@@ -6,7 +6,7 @@ This is work in progress.
 Build for docker swarm a setup to run in containers:
 - Cardano SL
 - Daedalus Wallet
-- Monitoring App (custom build)
+- Monitoring App (custom app to interact with cardano network)
 
 ## Reason:
 Easy to run and update cardano software.

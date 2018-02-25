@@ -1,8 +1,7 @@
 version: '3'
 services:
   cardano-sl:
-    build: cardano-sl
-    container_name: khwhahn/cardano-sl
+    image: khwhahn/cardano-sl
     volumes:
       - cardano:/cardano-sl
     deploy:
