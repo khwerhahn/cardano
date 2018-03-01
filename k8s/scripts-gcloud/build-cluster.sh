@@ -1,15 +1,15 @@
 #!/bin/bash -xe
 gcloud compute networks create application --mode auto
-gcloud alpha container clusters create application \
+gcloud container clusters create application \
         --network application \
-        --machine-type=n1-standard-1 \
+        --disk-size=200
+        --machine-type=g1-small \
         --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw" \
         --num-nodes=3 \
-        --enable-autoscaling --min-nodes=3 --max-nodes=5
+        --enable-autoscaling --min-nodes=3 --max-nodes=10
 gcloud container clusters list
 gcloud container clusters get-credentials application
 kubectl cluster-info
 kubectl create ns application
-gcloud compute images create cardano --size=200GB
-kubectl apply -f ../cardano-sl
+kubectl apply -f ../cardano-sl/production
 kubectl get pods --namespace application
