@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cardano-sl
-        image: khwhahn/cardano-sl
+        image: khwhahn/cardano-sl:0.1
         resources:
           limits:
             memory: "500Mi"

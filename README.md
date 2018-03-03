@@ -1,6 +1,6 @@
 # Cardano
 
-This is work in progress. Please feel free to participate.
+This is work in progress (under heavy construction). Please feel free to participate.
 
 ## Goal:
 Build a setup of containers for all flavours (k8s, docker swarm, docker....) so that you can host and build it where every you want.

@@ -5,8 +5,8 @@ gcloud container clusters create application \
         --disk-size=200
         --machine-type=g1-small \
         --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw" \
-        --num-nodes=3 \
-        --enable-autoscaling --min-nodes=3 --max-nodes=10
+        --num-nodes=1 \
+        --enable-autoscaling --min-nodes=1 --max-nodes=10
 gcloud container clusters list
 gcloud container clusters get-credentials application
 kubectl cluster-info
