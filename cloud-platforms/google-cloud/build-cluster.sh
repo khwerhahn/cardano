@@ -11,5 +11,5 @@ gcloud container clusters list
 gcloud container clusters get-credentials application
 kubectl cluster-info
 kubectl create ns application
-kubectl apply -f ../cardano-sl/production
+kubectl apply -f ../../k8s/cardano-sl/production
 kubectl get pods --namespace application

@@ -1,20 +1,20 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: cardano-sl-prod
+  name: daedalus-prod
 spec:
   replicas: 1
   template:
     metadata:
-      name: cardano-sl
+      name: daedalus
       labels:
-        app: cardano-sl
-        role: backend
+        app: daedalus
+        role: frontend
         env: production
     spec:
       containers:
-      - name: cardano-sl
-        image: khwhahn/cardano-sl:0.1
+      - name: daedalus
+        image: khwhahn/daedalus:0.1
         resources:
           limits:
             memory: "500Mi"
