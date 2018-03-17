@@ -1,3 +1,5 @@
+[logo]: https://themerkle.com/wp-content/uploads/cardano.jpg "Cardano"
+
 # Cardano
 
 This is work in progress (under heavy construction). Please feel free to participate.
@@ -10,12 +12,19 @@ Make it as easy as possible for everybody to participate and setup Cardano on th
 ## Containers
 ### Cardano SL (WIP)
 
+#### Usage
+Coming soon
+
+#### ToDos
+Coming soon
+
 ### Daedalus Wallet (WIP)
 The container is using a headless VNC environment. This means you can run the container somewhere and connect to it using VNC.
 
 Daedalus gets installed on a modified version of [ConSol/docker-headless-vnc-container](https://github.com/ConSol/docker-headless-vnc-container).
 
 #### Usage
+Coming soon
 
 #### ToDos
 - Clean up docker build from useless packages
