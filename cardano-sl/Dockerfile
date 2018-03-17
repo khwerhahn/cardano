@@ -24,4 +24,6 @@ RUN . /home/cardano/.nix-profile/etc/profile.d/nix.sh && \
 RUN . /home/cardano/.nix-profile/etc/profile.d/nix.sh && \
     nix-build -A connectScripts.mainnetWallet -o connect-to-mainnet
 
+EXPOSE 8090
+
 CMD ./connect-to-mainnet
