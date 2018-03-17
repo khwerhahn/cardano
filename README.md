@@ -1,4 +1,4 @@
-[logo]: https://s2.coinmarketcap.com/static/img/coins/32x32/2010.png "Cardano"
+https://s2.coinmarketcap.com/static/img/coins/32x32/2010.png
 
 # Cardano
 
