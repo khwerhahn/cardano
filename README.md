@@ -17,13 +17,13 @@ The containers are prepared in such a way, that they can be run on their own.
 - optimise build
 
 ### Daedalus Wallet (WIP)
-The container is using a headless VNC environment. This means you can run the container somewhere and connect to it using VNC.
+The container is using a headless VNC environment. This means you can run the container somewhere and connect to it using VNC. The possibility of accessing the container through your browser is possible using [**noVNC**](https://github.com/kanaka/noVNC)
 
 Daedalus gets installed on top of a modified version of [ConSol/docker-headless-vnc-container](https://github.com/ConSol/docker-headless-vnc-container).
 
 Each Docker image is installed with the following components:
 
-* Desktop environment [**Xfce4**](http://www.xfce.org) or [**IceWM**](http://www.icewm.org/)
+* Desktop environment [**Xfce4**](http://www.xfce.org)
 * VNC-Server (default VNC port `5901`)
 * [**noVNC**](https://github.com/kanaka/noVNC) - HTML5 VNC client (default http port `6901`)
 
@@ -51,7 +51,7 @@ Build an image from scratch:
 #### ToDos
 - Clean up docker build from useless packages
 - optimise and reduce build
-- improve default security checking
+- improve default security
 - tests
 
 ### Monitoring App (custom app for network stats etc) (Not started yet)
@@ -59,13 +59,22 @@ Run a little interactive app to show real time statistics for the cardano networ
 
 ## Kubernetes (k8s) (WIP):
 In the k8s folder are the `.yaml` definitions of setting up the containers.
+#### Usage
+#### ToDos
+- finish definitions
 
 ## Docker Compose (WIP)
+#### Usage
+#### ToDos
+- finish definitions
 
 ## Cloud Platforms
 In the folder `cloud-platforms` are the setup scripts and/or guides.
 ### Google Cloud Engines (WIP)
 in the `google-cloud` directory you will find the build script (and cleanup script) to create a kubernetes cluster to run cardano.
+#### Usage
+#### ToDos
+- finish build script
 ### AWS (WIP)
 Not started yet
 
