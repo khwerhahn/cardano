@@ -4,22 +4,12 @@ Name=Daedalus Wallet
 Comment=Home of ADA
 GenericName=Daedalus Wallet
 Keywords=Cardano;ADA;Blockchain;Cryptocurrency
-Exec=daedalus %u
+Exec=/headless/install/launch-daedalus.sh
 Terminal=false
 X-MultipleArgs=false
 Type=Application
-Icon=/usr/lib/firefox/browser/icons/mozicon128.png
+Icon=/headless/daedalus-logo.png
 Categories=GNOME;GTK;Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
 StartupNotify=true
 Actions=NewWindow;NewPrivateWindow;
-
-[Desktop Action NewWindow]
-Name=Open a New Window
-Exec=firefox -new-window
-OnlyShowIn=Unity;
-
-[Desktop Action NewPrivateWindow]
-Name=Open a New Private Window
-Exec=firefox -private-window
-OnlyShowIn=Unity;

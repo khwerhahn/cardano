@@ -2,7 +2,7 @@ version: '3'
 
 services:
   cardano-sl:
-    image: khwhahn/cardano-sl:latest
+    image: khwhahn/cardano-sl:0.1
     volumes:
       - ~/.cardano:/home/cardano/cardano-sl/state-wallet-mainnet
       - cardano_tls:/home/cardano/cardano-sl/state-wallet-mainnet/tls
@@ -10,13 +10,14 @@ services:
   daedalus:
     depends_on:
       - cardano-sl
-    image: khwhahn/daedalus:latest
+    image: khwhahn/daedalus:0.1
     network_mode: "service:cardano-sl"
     environment:
       DISPLAY: "$DISPLAY"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - cardano_tls:/home/daedalus/daedalus/tls
+
 
 volumes:
   cardano_tls:

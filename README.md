@@ -6,6 +6,8 @@ Build a setup of containers for all flavours (k8s, docker, ....) so that you can
 
 Make it as easy as possible for everybody to participate and setup Cardano on their own machines.
 
+![alt text](https://github.com/khwerhahn/cardano/blob/master/pics/desktop.png)
+
 ## Containers
 The containers are prepared in such a way, that they can be run on their own.
 ### Cardano SL (WIP)
@@ -27,7 +29,8 @@ Each Docker image is installed with the following components:
 * VNC-Server (default VNC port `5901`)
 * [**noVNC**](https://github.com/kanaka/noVNC) - HTML5 VNC client (default http port `6901`)
 
-![alt text](https://github.com/khwerhahn/cardano/blob/master/.pics/vnc-daedalus.png)
+
+![alt text](https://github.com/khwerhahn/cardano/blob/master/pics/daedalus.png)
 
 #### Usage
 Run command with mapping to local port `5901` (vnc protocol) and `6901` (vnc web access). Default password is vncpassword, but make sure you select your own
@@ -63,8 +66,9 @@ Run a little interactive app to show real time statistics for the cardano networ
 ## Kubernetes (k8s) (WIP):
 In the k8s folder are the `.yaml` definitions of setting up the containers.
 #### Usage
+- locally via minikube just `kubectl apply -f ./k8s/`
 #### ToDos
-- finish definitions
+- deadalus container crashes - fix
 
 ## Docker Compose (WIP)
 #### Usage
