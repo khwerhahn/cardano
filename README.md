@@ -27,8 +27,7 @@ Each Docker image is installed with the following components:
 * VNC-Server (default VNC port `5901`)
 * [**noVNC**](https://github.com/kanaka/noVNC) - HTML5 VNC client (default http port `6901`)
 
-noVNC
-![alt text](https://github.com/khwerhahn/cardano/.pics/vnc-daedalus.png "noVNC")
+![alt text](https://github.com/khwerhahn/cardano/blob/master/.pics/vnc-daedalus.png)
 
 #### Usage
 Run command with mapping to local port `5901` (vnc protocol) and `6901` (vnc web access):
