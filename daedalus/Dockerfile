@@ -60,20 +60,23 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
 RUN apt-get install -y nodejs
 RUN apt-get clean && rm -fr /var/lib/apt/lists/*
 WORKDIR /home/daedalus
-# USER 1984
 RUN git clone https://github.com/input-output-hk/daedalus.git
 WORKDIR /home/daedalus/daedalus
 RUN mkdir -p node_modules/daedalus-client-api
-RUN npm install && npm run package
+# remove electron packager
+RUN $INST_SCRIPTS/ignore-electron-packager.sh
+WORKDIR /home/daedalus/daedalus
+RUN npm install && npm run build
 RUN cp installers/ca.conf installers/client.conf installers/server.conf .
 RUN bash installers/build-certificates-unix.sh
 RUN rm -f tls/server.key && ln -s tls/server/server.key tls/server.key
 RUN rm -f tls/server.cert && ln -s tls/server/server.crt tls/server.cert
 RUN rm ca.conf client.conf server.conf
+RUN bash ./scripts/
 
 
 
 USER 1984
 
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
-CMD ["--tail-log"]
+CMD ["--tail-log", "npm start"]

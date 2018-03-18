@@ -1,37 +1,61 @@
-https://s2.coinmarketcap.com/static/img/coins/32x32/2010.png
-![alt text](https://s2.coinmarketcap.com/static/img/coins/32x32/2010.png "Cardano Logo")
-
-# Cardano
-
+# Cardano Yourself ![alt text](https://s2.coinmarketcap.com/static/img/coins/32x32/2010.png "Cardano Logo")
 This is work in progress (under heavy construction). Please feel free to participate.
 
-## Goal:
-Build a setup of containers for all flavours (k8s, docker swarm, docker....) so that you can host and build it where every you want and to start staking (when released).
+### Goal:
+Build a setup of containers for all flavours (k8s, docker, ....) so that you can host and build it where every you want and to start staking (when released).
 
 Make it as easy as possible for everybody to participate and setup Cardano on their own machines.
 
 ## Containers
+The containers are prepared in such a way, that they can be run on their own.
 ### Cardano SL (WIP)
 
 #### Usage
-Coming soon
 
 #### ToDos
-Coming soon
+- tests
+- optimise build
 
 ### Daedalus Wallet (WIP)
 The container is using a headless VNC environment. This means you can run the container somewhere and connect to it using VNC.
 
-Daedalus gets installed on a modified version of [ConSol/docker-headless-vnc-container](https://github.com/ConSol/docker-headless-vnc-container).
+Daedalus gets installed on top of a modified version of [ConSol/docker-headless-vnc-container](https://github.com/ConSol/docker-headless-vnc-container).
+
+Each Docker image is installed with the following components:
+
+* Desktop environment [**Xfce4**](http://www.xfce.org) or [**IceWM**](http://www.icewm.org/)
+* VNC-Server (default VNC port `5901`)
+* [**noVNC**](https://github.com/kanaka/noVNC) - HTML5 VNC client (default http port `6901`)
 
 #### Usage
-Coming soon
+Run command with mapping to local port `5901` (vnc protocol) and `6901` (vnc web access):
+
+    docker run -d -p 5901:5901 -p 6901:6901 khwhahn/daedalus
+
+Change the default user and group within a container to your own with adding `--user $(id -u):$(id -g)`:
+
+    docker run -d -p 5901:5901 -p 6901:6901 --user $(id -u):$(id -g) khwhahn/daedalus
+
+If you want to get into the container use interactive mode `-it` and `bash`     
+
+    docker run -it -p 5901:5901 -p 6901:6901 khwhahn/daedalus bash
+
+Build an image from scratch:
+
+    docker build -t ImageName ./daedalus
+
+=> connect via __VNC viewer `localhost:5901`__, default password: `vncpassword`
+
+=> connect via __noVNC HTML5 client__: [http://localhost:6901/?password=vncpassword]()
 
 #### ToDos
 - Clean up docker build from useless packages
-- optimise build and startup
+- optimise and reduce build
+- improve default security checking
+- tests
 
 ### Monitoring App (custom app for network stats etc) (Not started yet)
+Run a little interactive app to show real time statistics for the cardano network.
 
 ## Kubernetes (k8s) (WIP):
 In the k8s folder are the `.yaml` definitions of setting up the containers.
