@@ -27,6 +27,9 @@ Each Docker image is installed with the following components:
 * VNC-Server (default VNC port `5901`)
 * [**noVNC**](https://github.com/kanaka/noVNC) - HTML5 VNC client (default http port `6901`)
 
+noVNC
+![alt text](https://www.dropbox.com/s/a7yimryqh15iw7u/vnc-daedalus.png?dl=0 "noVNC")
+
 #### Usage
 Run command with mapping to local port `5901` (vnc protocol) and `6901` (vnc web access):
 
@@ -53,6 +56,7 @@ Build an image from scratch:
 - optimise and reduce build
 - improve default security
 - tests
+- Add startup shortcuts to desktop
 
 ### Monitoring App (custom app for network stats etc) (Not started yet)
 Run a little interactive app to show real time statistics for the cardano network.
