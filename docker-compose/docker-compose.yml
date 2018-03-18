@@ -1,18 +1,22 @@
 version: '3'
+
 services:
   cardano-sl:
-    image: khwhahn/cardano-sl
+    build: ../cardano-sl
     volumes:
-      - cardano:/cardano-sl
-    deploy:
-        replicas: 1
-        restart_policy:
-          condition: on-failure
-    networks:
-      - cardanonet
-volumes:
-  cardano:
-    driver: local
+      - ~/.cardano:/home/cardano/cardano-sl/state-wallet-mainnet
+      - cardano_tls:/home/cardano/cardano-sl/state-wallet-mainnet/tls
 
-networks:
-  cardanonet:
+  daedalus:
+    depends_on:
+      - cardano-sl
+    build: ../daedalus
+    network_mode: "service:cardano-sl"
+    environment:
+      DISPLAY: "$DISPLAY"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - cardano_tls:/home/daedalus/daedalus/tls
+
+volumes:
+  cardano_tls:
