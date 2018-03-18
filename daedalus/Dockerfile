@@ -72,9 +72,6 @@ RUN bash installers/build-certificates-unix.sh
 RUN rm -f tls/server.key && ln -s tls/server/server.key tls/server.key
 RUN rm -f tls/server.cert && ln -s tls/server/server.crt tls/server.cert
 RUN rm ca.conf client.conf server.conf
-RUN bash ./scripts/
-
-
 
 USER 1984
 
