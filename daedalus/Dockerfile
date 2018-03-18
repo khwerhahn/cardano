@@ -76,7 +76,7 @@ RUN rm -f tls/server.key && ln -s tls/server/server.key tls/server.key
 RUN rm -f tls/server.cert && ln -s tls/server/server.crt tls/server.cert
 RUN rm ca.conf client.conf server.conf
 
-USER 1984
+USER 1000
 
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]

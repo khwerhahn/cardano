@@ -30,9 +30,9 @@ Each Docker image is installed with the following components:
 ![alt text](https://github.com/khwerhahn/cardano/blob/master/.pics/vnc-daedalus.png)
 
 #### Usage
-Run command with mapping to local port `5901` (vnc protocol) and `6901` (vnc web access):
+Run command with mapping to local port `5901` (vnc protocol) and `6901` (vnc web access). Default password is vncpassword, but make sure you select your own
 
-    docker run -d -p 5901:5901 -p 6901:6901 khwhahn/daedalus
+    docker run -d -p 5901:5901 -p 6901:6901 -e VNC_PW=vncpassword khwhahn/daedalus
 
 Change the default user and group within a container to your own with adding `--user $(id -u):$(id -g)`:
 
