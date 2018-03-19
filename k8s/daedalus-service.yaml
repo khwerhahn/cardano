@@ -9,13 +9,13 @@ metadata:
     io.kompose.service: daedalus
   name: daedalus
 spec:
-  clusterIP: None
+  type: NodePort
   ports:
   - name: vnc
     port: 5901
     targetPort: 5901
     protocol: TCP
-  - name: vncweb
+  - name: http
     port: 6901
     targetPort: 6901
     protocol: TCP

@@ -6,6 +6,12 @@ Build a setup of containers for all flavours (k8s, docker, ....) so that you can
 
 Make it as easy as possible for everybody to participate and setup Cardano on their own machines.
 
+### Warning:
+This is just to help people get started. This has not been tested in production. Only use this if you really know how to secure your environment and your application.
+
+Also only invest what you can afford to lose.
+
+### Sneak Peek:
 ![alt text](https://github.com/khwerhahn/cardano/blob/master/pics/desktop.png)
 
 ## Containers
@@ -66,14 +72,15 @@ Run a little interactive app to show real time statistics for the cardano networ
 ## Kubernetes (k8s) (WIP):
 In the k8s folder are the `.yaml` definitions of setting up the containers.
 #### Usage
-- locally via minikube just `kubectl apply -f ./k8s/`
+- locally via minikube just `kubectl apply -f ./k8s/` (needs working)
 #### ToDos
-- deadalus container crashes - fix
+- daedalus container crashes - fix
+- bug: doesn't work with minikube
 
 ## Docker Compose (WIP)
 #### Usage
 #### ToDos
-- finish definitions
+- finish definitions as not working
 
 ## Cloud Platforms
 In the folder `cloud-platforms` are the setup scripts and/or guides.
@@ -87,6 +94,8 @@ Not started yet
 
 ## Help Wanted
 I'm looking for some help to maintain and improve this project. Please feel free to PM me. Best to reach me via [Twitter](https://twitter.com/khwhahn)
+
+Please have a look at the issues. 
 
 ## Thanks
 Thanks to IOHK and the whole Cardano team for setting new standards within the crypto space!
