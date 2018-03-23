@@ -7,8 +7,8 @@ metadata:
   name: cardano-tls
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
   resources:
     requests:
-      storage: 100Mi
+      storage: 20Gi
 status: {}

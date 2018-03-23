@@ -20,6 +20,10 @@ spec:
     spec:
       containers:
       - image: khwhahn/cardano-sl:0.1
+        ports:
+          - containerPort: 8090
+            name: http
+            protocol: TCP
         name: cardano-sl
         resources: {}
         volumeMounts:

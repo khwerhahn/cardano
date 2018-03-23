@@ -19,9 +19,6 @@ spec:
     port: 6901
     targetPort: 6901
     protocol: TCP
-  - name: headless
-    port: 55555
-    targetPort: 0
   selector:
     io.kompose.service: daedalus
 status:

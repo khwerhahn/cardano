@@ -9,11 +9,12 @@ metadata:
     io.kompose.service: cardano-sl
   name: cardano-sl
 spec:
-  clusterIP: None
+  type: NodePort
   ports:
-  - name: headless
-    port: 55555
-    targetPort: 0
+  - name: http
+    port: 8090
+    targetPort: 8090
+    protocol: TCP
   selector:
     io.kompose.service: cardano-sl
 status:
