@@ -3,6 +3,7 @@
 set -e
 
 echo -e "\n------------------ startup of Xfce4 window manager ------------------"
+echo "Display is $DISPLAY"
 
 ### disable screensaver and power management
 xset -dpms &

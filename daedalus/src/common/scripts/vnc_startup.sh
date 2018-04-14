@@ -32,6 +32,12 @@ fi
 echo "$VNC_PW" | vncpasswd -f >> $PASSWD_PATH
 chmod 600 $PASSWD_PATH
 
+## detect true localhost (minikube fix)
+echo -e "\n\n------------------ Environment variables ------------------"
+echo "VNC_IP is $VNC_IP"
+echo "Display is $DISPLAY"
+echo "VNC_PORT is $VNC_PORT"
+echo "NO_VNC_PORT is $NO_VNC_PORT"
 
 ## start vncserver and noVNC webclient
 $NO_VNC_HOME/utils/launch.sh --vnc localhost:$VNC_PORT --listen $NO_VNC_PORT &
